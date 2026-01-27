@@ -1,4 +1,6 @@
 import { getAllTags, getItemsByTag } from '../../lib/content';
+import Link from "next/link";
+
 
 export async function getStaticPaths() {
   const tags = getAllTags();
@@ -19,7 +21,8 @@ export default function TagPage({ tag, items }) {
       {items.map((item) => (
         <div key={item.slug} className="card">
           <h3>
-            <a href={`/items/${item.slug}`}>{item.title}</a>
+            <Link href={`/items/${item.slug}/`}>{item.title}</Link>
+
             {item.evidence && <span className={`badge ${item.evidence}`}>{item.evidence}</span>}
           </h3>
           <p>得分：{item.score}</p>

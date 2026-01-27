@@ -6,12 +6,14 @@ const mdxComponents = {
   a: ({ href = '', children, ...props }) => {
     // 站内链接：/xxx 这种，交给 Next Link（会自动加 basePath）
     if (href.startsWith('/')) {
-      return (
-        <Link href={href} className={props.className}>
-          {children}
-        </Link>
-      );
-    }
+  const nextHref = href.endsWith('/') ? href : `${href}/`;
+  return (
+    <Link href={nextHref} className={props.className}>
+      {children}
+    </Link>
+  );
+}
+
 
     // 站外链接：保持 <a>
     return (
@@ -52,15 +54,15 @@ export default function ItemPage({ frontMatter, mdxSource }) {
       </p>
       <div>
         {(frontMatter.tags || []).map((tag) => (
-          <Link
-  key={tag}
-  href={`/tags/${encodeURIComponent(tag)}`}
-  legacyBehavior
->
-  <a className="tag-chip">{tag}</a>
-</Link>
+  <Link
+    key={tag}
+    href={`/tags/${encodeURIComponent(tag)}/`}
+    className="tag-chip"
+  >
+    {tag}
+  </Link>
+))}
 
-        ))}
         {frontMatter.evidence && (
           <span className={`badge ${frontMatter.evidence}`}>{frontMatter.evidence}</span>
         )}

@@ -1,5 +1,6 @@
 import { getAllItems } from '../lib/content';
 import { useState } from 'react';
+import Link from "next/link";
 
 export async function getStaticProps() {
   const items = getAllItems();
@@ -31,7 +32,8 @@ export default function SearchPage({ items }) {
       {filtered.map((item) => (
         <div key={item.slug} className="card">
           <h3>
-            <a href={`/items/${item.slug}`}>{item.title}</a>
+            <Link href={`/items/${item.slug}/`}>{item.title}</Link>
+
             {item.evidence && <span className={`badge ${item.evidence}`}>{item.evidence}</span>}
           </h3>
           <p>得分：{item.score}</p>

@@ -1,6 +1,7 @@
 import { getAllWeekReports, getWeekBySlug, getAllItems } from '../lib/content';
 import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemote } from 'next-mdx-remote';
+import Link from "next/link";
 
 const toSerializable = (obj) => JSON.parse(JSON.stringify(obj));
 
@@ -75,7 +76,8 @@ export default function Home({ week, tldrMdx, listMdx, actionsMdx, items }) {
         {items.map((item) => (
           <div key={item.slug} className="card">
             <h3>
-              <a href={`/items/${item.slug}`}>{item.title}</a>
+              <Link href={`/items/${item.slug}/`}>{item.title}</Link>
+
               {item.evidence && (
                 <span className={`badge ${item.evidence}`}>{item.evidence}</span>
               )}
@@ -83,9 +85,14 @@ export default function Home({ week, tldrMdx, listMdx, actionsMdx, items }) {
             <p>得分：{item.score}</p>
             <div>
               {(item.tags || []).map((tag) => (
-                <a key={tag} href={`/tags/${encodeURIComponent(tag)}`} className="tag-chip">
-                  {tag}
-                </a>
+                <Link
+  key={tag}
+  href={`/tags/${encodeURIComponent(tag)}/`}
+  className="tag-chip"
+>
+  {tag}
+</Link>
+
               ))}
             </div>
           </div>
