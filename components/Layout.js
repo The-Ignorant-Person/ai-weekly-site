@@ -11,12 +11,12 @@ export default function Layout({ children, title = 'AI 周报站点' }) {
       </Head>
       <header className="header">
         <nav>
-          <Link href="/">
+          <Link href="">
             <strong>AI 周报站点</strong>
           </Link>
-          <Link href="/weeks">周报归档</Link>
-          <Link href="/tags">标签</Link>
-          <Link href="/search">搜索</Link>
+          <Link href="weeks">周报归档</Link>
+          <Link href="tags">标签</Link>
+          <Link href="search">搜索</Link>
         </nav>
       </header>
       <main className="container">{children}</main>
