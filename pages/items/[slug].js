@@ -52,9 +52,14 @@ export default function ItemPage({ frontMatter, mdxSource }) {
       </p>
       <div>
         {(frontMatter.tags || []).map((tag) => (
-          <a key={tag} href={`/tags/${encodeURIComponent(tag)}`} className="tag-chip">
-            {tag}
-          </a>
+          <Link
+  key={tag}
+  href={`/tags/${encodeURIComponent(tag)}`}
+  legacyBehavior
+>
+  <a className="tag-chip">{tag}</a>
+</Link>
+
         ))}
         {frontMatter.evidence && (
           <span className={`badge ${frontMatter.evidence}`}>{frontMatter.evidence}</span>
