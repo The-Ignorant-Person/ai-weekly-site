@@ -1,6 +1,27 @@
 import { getAllItems, getItemBySlug } from '../../lib/content';
 import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemote } from 'next-mdx-remote';
+import Link from 'next/link';
+const mdxComponents = {
+  a: ({ href = '', children, ...props }) => {
+    // 站内链接：/xxx 这种，交给 Next Link（会自动加 basePath）
+    if (href.startsWith('/')) {
+      return (
+        <Link href={href} className={props.className}>
+          {children}
+        </Link>
+      );
+    }
+
+    // 站外链接：保持 <a>
+    return (
+      <a href={href} className={props.className} target="_blank" rel="noopener noreferrer">
+        {children}
+      </a>
+    );
+  },
+};
+
 const toSerializable = (obj) => JSON.parse(JSON.stringify(obj));
 
 export async function getStaticPaths() {
@@ -39,7 +60,8 @@ export default function ItemPage({ frontMatter, mdxSource }) {
           <span className={`badge ${frontMatter.evidence}`}>{frontMatter.evidence}</span>
         )}
       </div>
-      <MDXRemote {...mdxSource} />
+      <MDXRemote {...mdxSource} components={mdxComponents} />
+
     </article>
   );
 }
