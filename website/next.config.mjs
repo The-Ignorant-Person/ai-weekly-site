@@ -1,15 +1,12 @@
-/** @type {import('next').NextConfig} */
 const repo = "ai-weekly-site";
-const isProd = process.env.NODE_ENV === "production";
 
-const nextConfig = {
+export default {
   output: "export",
   trailingSlash: true,
+
+  // 关键：GitHub Pages 项目站点必须有 basePath
+  basePath: `/${repo}`,
+  assetPrefix: `/${repo}/`,
+
   images: { unoptimized: true },
-
-  // GitHub Pages 子路径部署必须有
-  basePath: isProd ? `/${repo}` : "",
-  assetPrefix: isProd ? `/${repo}/` : "",
 };
-
-export default nextConfig;
