@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
-const repo = "ai-weekly-site";
+const repo =
+  process.env.GITHUB_REPOSITORY?.split("/")[1] ?? "ai-weekly-site";
 const isProd = process.env.NODE_ENV === "production";
 
 const nextConfig = {
