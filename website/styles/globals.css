@@ -1,0 +1,210 @@
+/* Global styles for the AI Weekly site */
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Source Serif 4", "Noto Serif SC", "Songti SC", "STSong", serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* Color variables */
+:root {
+  --bg: #f8fafc;
+  --text: #0f172a;
+  --card-bg: #ffffff;
+  --accent: #1d4ed8;
+  --accent-light: #dbeafe;
+  --border: #e5e7eb;
+  --badge-A: #15803d;
+  --badge-B: #ca8a04;
+  --badge-C: #be123c;
+  --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  --page-grad: radial-gradient(1200px 600px at 10% -10%, #e0f2fe 0%, transparent 60%),
+    radial-gradient(1200px 600px at 90% -20%, #ede9fe 0%, transparent 55%);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0b1220;
+    --text: #e2e8f0;
+    --card-bg: #111827;
+    --accent: #60a5fa;
+    --accent-light: #1e3a8a;
+    --border: #1f2937;
+    --badge-A: #16a34a;
+    --badge-B: #ca8a04;
+    --badge-C: #dc2626;
+    --shadow: 0 12px 28px rgba(15, 23, 42, 0.35);
+    --page-grad: radial-gradient(900px 500px at 10% -10%, rgba(56, 189, 248, 0.18) 0%, transparent 65%),
+      radial-gradient(900px 500px at 90% -20%, rgba(167, 139, 250, 0.16) 0%, transparent 55%);
+  }
+}
+
+body {
+  background-image: var(--page-grad);
+  background-attachment: fixed;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+h1, h2, h3, h4 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+h1 {
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  letter-spacing: 0.01em;
+}
+h2 {
+  font-size: clamp(1.3rem, 2vw, 1.8rem);
+}
+h3 {
+  font-size: 1.1rem;
+}
+
+p {
+  margin: 0.75rem 0;
+}
+
+ul, ol {
+  padding-left: 1.4rem;
+  margin: 0.75rem 0 1.25rem;
+}
+
+li + li {
+  margin-top: 0.4rem;
+}
+
+blockquote {
+  margin: 1rem 0;
+  padding: 0.75rem 1rem;
+  background: var(--card-bg);
+  border-left: 4px solid var(--accent);
+  border-radius: 0.5rem;
+  box-shadow: var(--shadow);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0 1.5rem;
+  background: var(--card-bg);
+  box-shadow: var(--shadow);
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+th, td {
+  text-align: left;
+  padding: 0.7rem 0.9rem;
+  border-bottom: 1px solid var(--border);
+  font-variant-numeric: tabular-nums;
+}
+th {
+  background: rgba(15, 23, 42, 0.04);
+  font-weight: 600;
+}
+
+code {
+  background-color: var(--card-bg);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
+    'Courier New', monospace;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1.5rem 1.75rem 2.5rem;
+}
+
+.header {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(12px);
+  background: color-mix(in srgb, var(--bg) 85%, transparent);
+  z-index: 10;
+}
+
+.header nav {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+  font-size: 0.95rem;
+}
+
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+.tag-chip {
+  display: inline-block;
+  background-color: var(--accent-light);
+  color: var(--accent);
+  border-radius: 9999px;
+  padding: 0.15rem 0.6rem;
+  font-size: 0.75rem;
+  margin-right: 0.3rem;
+  margin-bottom: 0.3rem;
+}
+
+.badge {
+  display: inline-block;
+  border-radius: 0.25rem;
+  padding: 0.1rem 0.4rem;
+  font-size: 0.75rem;
+  color: #fff;
+  margin-left: 0.5rem;
+}
+.badge.A { background-color: var(--badge-A); }
+.badge.B { background-color: var(--badge-B); }
+.badge.C { background-color: var(--badge-C); }
+
+.callout {
+  background-color: var(--accent-light);
+  border-left: 4px solid var(--accent);
+  padding: 0.75rem 1rem;
+  margin: 1.5rem 0;
+  border-radius: 0.25rem;
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 1rem 1rem 2rem;
+  }
+  .header {
+    padding: 0.75rem 1rem;
+  }
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+  thead {
+    display: none;
+  }
+  tr {
+    border-bottom: 1px solid var(--border);
+    padding: 0.6rem 0.2rem;
+  }
+  td {
+    border-bottom: none;
+    padding: 0.3rem 0.6rem;
+  }
+}

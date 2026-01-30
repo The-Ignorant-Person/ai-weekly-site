@@ -1,0 +1,7 @@
+website/node_modules/
+website/.next/
+website/out/
+website/.turbo/
+website/.cache/
+.DS_Store
+Thumbs.db
