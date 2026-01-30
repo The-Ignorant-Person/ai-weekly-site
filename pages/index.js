@@ -96,8 +96,6 @@ export default function Home({ week, tldrMdx, listMdx, actionsMdx, items }) {
       <h1>{week.title}</h1>
       <h2>本周 TL;DR</h2>
       <MDXRemote {...tldrMdx} components={mdxComponents} />
-      <h2>本周入选条目</h2>
-      <MDXRemote {...listMdx} components={mdxComponents} />
       <h2>本周卡片列表</h2>
       <div>
         {items.map((item) => (
