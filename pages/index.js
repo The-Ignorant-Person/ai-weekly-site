@@ -2,7 +2,6 @@ import { getAllWeekReports, getWeekBySlug, getAllItems } from '../lib/content';
 import Link from 'next/link';
 import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemote } from 'next-mdx-remote';
-<<<<<<< HEAD
 
 const toSerializable = (obj) => JSON.parse(JSON.stringify(obj));
 
@@ -35,10 +34,6 @@ const mdxComponents = {
     );
   },
 };
-=======
-const toSerializable = (obj) => JSON.parse(JSON.stringify(obj));
-
->>>>>>> bb5b7e0216f1aff1178a412667cd43513fec2cda
 
 /**
  * Extract specific sections from a weekly report content.
@@ -62,10 +57,6 @@ function extractSections(content) {
       continue;
     }
     if (line.trim().startsWith('## ') && current) {
-<<<<<<< HEAD
-=======
-      // reached next section
->>>>>>> bb5b7e0216f1aff1178a412667cd43513fec2cda
       current = null;
     }
     if (current) {
@@ -87,10 +78,6 @@ export async function getStaticProps() {
   const tldrMdx = await serialize(tldr);
   const listMdx = await serialize(list);
   const actionsMdx = await serialize(actions);
-<<<<<<< HEAD
-=======
-  // Get items for card list
->>>>>>> bb5b7e0216f1aff1178a412667cd43513fec2cda
   const items = getAllItems();
   return {
     props: toSerializable({
@@ -108,13 +95,9 @@ export default function Home({ week, tldrMdx, listMdx, actionsMdx, items }) {
     <div>
       <h1>{week.title}</h1>
       <h2>本周 TL;DR</h2>
-<<<<<<< HEAD
       <MDXRemote {...tldrMdx} components={mdxComponents} />
       <h2>本周入选条目</h2>
       <MDXRemote {...listMdx} components={mdxComponents} />
-=======
-      <MDXRemote {...tldrMdx} />
->>>>>>> bb5b7e0216f1aff1178a412667cd43513fec2cda
       <h2>本周卡片列表</h2>
       <div>
         {items.map((item) => (
@@ -141,14 +124,7 @@ export default function Home({ week, tldrMdx, listMdx, actionsMdx, items }) {
         ))}
       </div>
       <h2>对我最关键的 3 个行动</h2>
-<<<<<<< HEAD
       <MDXRemote {...actionsMdx} components={mdxComponents} />
     </div>
   );
 }
-=======
-      <MDXRemote {...actionsMdx} />
-    </div>
-  );
-}
->>>>>>> bb5b7e0216f1aff1178a412667cd43513fec2cda
