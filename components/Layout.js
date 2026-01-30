@@ -14,6 +14,10 @@ export default function Layout({ children, title = 'AI 周报站点' }) {
           <Link href="/">
             <strong>AI 周报站点</strong>
           </Link>
+<<<<<<< HEAD
+=======
+          {/* Use trailing slashes for GitHub Pages static export */}
+>>>>>>> bb5b7e0216f1aff1178a412667cd43513fec2cda
           <Link href="/weeks/">周报归档</Link>
           <Link href="/tags/">标签</Link>
           <Link href="/search/">搜索</Link>
@@ -22,4 +26,8 @@ export default function Layout({ children, title = 'AI 周报站点' }) {
       <main className="container">{children}</main>
     </>
   );
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> bb5b7e0216f1aff1178a412667cd43513fec2cda

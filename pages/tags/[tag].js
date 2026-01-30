@@ -1,7 +1,6 @@
 import { getAllTags, getItemsByTag } from '../../lib/content';
-import Link from 'next/link';
+import Link from "next/link";
 
-const toSerializable = (obj) => JSON.parse(JSON.stringify(obj));
 
 export async function getStaticPaths() {
   const tags = getAllTags();
@@ -12,7 +11,7 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const tag = params.tag;
   const items = getItemsByTag(tag);
-  return { props: toSerializable({ tag, items }) };
+  return { props: { tag, items } };
 }
 
 export default function TagPage({ tag, items }) {
@@ -23,20 +22,15 @@ export default function TagPage({ tag, items }) {
         <div key={item.slug} className="card">
           <h3>
             <Link href={`/items/${item.slug}/`}>{item.title}</Link>
-            {item.evidence && (
-              <span className={`badge ${item.evidence}`}>{item.evidence}</span>
-            )}
+
+            {item.evidence && <span className={`badge ${item.evidence}`}>{item.evidence}</span>}
           </h3>
           <p>得分：{item.score}</p>
           <div>
             {(item.tags || []).map((t) => (
-              <Link
-                key={t}
-                href={`/tags/${encodeURIComponent(t)}/`}
-                className="tag-chip"
-              >
+              <a key={t} href={`/tags/${encodeURIComponent(t)}`} className="tag-chip">
                 {t}
-              </Link>
+              </a>
             ))}
           </div>
         </div>

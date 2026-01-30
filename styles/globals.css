@@ -3,7 +3,12 @@ html,
 body {
   padding: 0;
   margin: 0;
+<<<<<<< HEAD
   font-family: "Source Serif 4", "Noto Serif SC", "Songti SC", "STSong", serif;
+=======
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+>>>>>>> bb5b7e0216f1aff1178a412667cd43513fec2cda
   background-color: var(--bg);
   color: var(--text);
   line-height: 1.6;
@@ -11,6 +16,7 @@ body {
 
 /* Color variables */
 :root {
+<<<<<<< HEAD
   --bg: #f8fafc;
   --text: #0f172a;
   --card-bg: #ffffff;
@@ -23,10 +29,22 @@ body {
   --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
   --page-grad: radial-gradient(1200px 600px at 10% -10%, #e0f2fe 0%, transparent 60%),
     radial-gradient(1200px 600px at 90% -20%, #ede9fe 0%, transparent 55%);
+=======
+  --bg: #ffffff;
+  --text: #0f172a;
+  --card-bg: #f8fafc;
+  --accent: #2563eb;
+  --accent-light: #bfdbfe;
+  --border: #e2e8f0;
+  --badge-A: #15803d;
+  --badge-B: #ca8a04;
+  --badge-C: #be123c;
+>>>>>>> bb5b7e0216f1aff1178a412667cd43513fec2cda
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
+<<<<<<< HEAD
     --bg: #0b1220;
     --text: #e2e8f0;
     --card-bg: #111827;
@@ -47,6 +65,20 @@ body {
   background-attachment: fixed;
 }
 
+=======
+    --bg: #0f172a;
+    --text: #f1f5f9;
+    --card-bg: #1e293b;
+    --accent: #3b82f6;
+    --accent-light: #1e40af;
+    --border: #334155;
+    --badge-A: #16a34a;
+    --badge-B: #ca8a04;
+    --badge-C: #dc2626;
+  }
+}
+
+>>>>>>> bb5b7e0216f1aff1178a412667cd43513fec2cda
 a {
   color: var(--accent);
   text-decoration: none;
@@ -61,6 +93,7 @@ h1, h2, h3, h4 {
   line-height: 1.3;
 }
 
+<<<<<<< HEAD
 h1 {
   font-size: clamp(1.8rem, 3vw, 2.6rem);
   letter-spacing: 0.01em;
@@ -114,6 +147,8 @@ th {
   font-weight: 600;
 }
 
+=======
+>>>>>>> bb5b7e0216f1aff1178a412667cd43513fec2cda
 code {
   background-color: var(--card-bg);
   padding: 0.2rem 0.4rem;
@@ -123,27 +158,39 @@ code {
 }
 
 .container {
+<<<<<<< HEAD
   max-width: 960px;
   margin: 0 auto;
   padding: 1.5rem 1.75rem 2.5rem;
+=======
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+>>>>>>> bb5b7e0216f1aff1178a412667cd43513fec2cda
 }
 
 .header {
   padding: 1rem 1.5rem;
   border-bottom: 1px solid var(--border);
+<<<<<<< HEAD
   position: sticky;
   top: 0;
   backdrop-filter: blur(12px);
   background: color-mix(in srgb, var(--bg) 85%, transparent);
   z-index: 10;
+=======
+>>>>>>> bb5b7e0216f1aff1178a412667cd43513fec2cda
 }
 
 .header nav {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+<<<<<<< HEAD
   align-items: center;
   font-size: 0.95rem;
+=======
+>>>>>>> bb5b7e0216f1aff1178a412667cd43513fec2cda
 }
 
 .card {
@@ -152,7 +199,10 @@ code {
   border-radius: 0.5rem;
   padding: 1rem 1.25rem;
   margin-bottom: 1.5rem;
+<<<<<<< HEAD
   box-shadow: var(--shadow);
+=======
+>>>>>>> bb5b7e0216f1aff1178a412667cd43513fec2cda
 }
 
 .tag-chip {
@@ -184,6 +234,7 @@ code {
   padding: 0.75rem 1rem;
   margin: 1.5rem 0;
   border-radius: 0.25rem;
+<<<<<<< HEAD
 }
 
 @media (max-width: 640px) {
@@ -208,3 +259,6 @@ code {
     padding: 0.3rem 0.6rem;
   }
 }
+=======
+}
+>>>>>>> bb5b7e0216f1aff1178a412667cd43513fec2cda

@@ -24,4 +24,8 @@ export default function TagsPage({ tags, counts }) {
       </ul>
     </div>
   );
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> bb5b7e0216f1aff1178a412667cd43513fec2cda

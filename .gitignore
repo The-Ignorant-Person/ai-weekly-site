@@ -1,7 +1,8 @@
-website/node_modules/
-website/.next/
-website/out/
-website/.turbo/
-website/.cache/
+node_modules/
+.next/
+out/
+.turbo/
+.cache/
+.npm-cache/
 .DS_Store
 Thumbs.db
